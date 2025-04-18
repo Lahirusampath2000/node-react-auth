@@ -26,25 +26,23 @@ const Login = () => {
   };
 
   return (
-    <Container fluid className="min-vh-100 d-flex">
-      <Row className="g-0 flex-grow-1">
-       
-
-        {/* Form Section */}
-        <Col md={6} className="bg-light d-flex align-items-center justify-content-center">
-          <div className="w-100 p-4" style={{ maxWidth: "400px" }}>
+    <Container className="min-vh-100 d-flex align-items-center justify-content-center">
+      <Row className="w-100 justify-content-center">
+        <Col xs={12} md={10} lg={8} xl={6} className="bg-light p-5 rounded-4">
+          <div className="w-100" style={{ maxWidth: "500px", margin: "0 auto" }}>
             <div className="text-center mb-5">
-              <h2 className="mb-3">Welcome Back</h2>
-              <p className="text-muted">Please sign in to continue</p>
+              <h1 className="mb-4 display-4">Welcome Back</h1>
+              <p className="text-muted fs-5">Please sign in to continue</p>
             </div>
 
             {error && <Alert variant="danger">{error}</Alert>}
 
             <Form onSubmit={handleSubmit}>
               {/* Email Input */}
-              <Form.Group className="mb-3">
-                <Form.Label>Email address</Form.Label>
+              <Form.Group className="mb-4">
+                <Form.Label className="fs-5">Email address</Form.Label>
                 <Form.Control
+                  size="lg"
                   type="email"
                   placeholder="Enter email"
                   value={email}
@@ -57,9 +55,10 @@ const Login = () => {
               </Form.Group>
 
               {/* Password Input */}
-              <Form.Group className="mb-3">
-                <Form.Label>Password</Form.Label>
+              <Form.Group className="mb-4">
+                <Form.Label className="fs-5">Password</Form.Label>
                 <Form.Control
+                  size="lg"
                   type="password"
                   placeholder="Password"
                   value={password}
@@ -78,8 +77,9 @@ const Login = () => {
                   label="Remember me"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
+                  className="fs-5"
                 />
-                <Link to="/forgot-password" className="text-decoration-none">
+                <Link to="/forgot-password" className="text-decoration-none fs-5">
                   Forgot password?
                 </Link>
               </div>
@@ -88,7 +88,8 @@ const Login = () => {
               <Button 
                 variant="primary" 
                 type="submit" 
-                className="w-100 mb-3"
+                size="lg"
+                className="w-100 mb-4 py-3 fs-5"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -107,8 +108,8 @@ const Login = () => {
 
               {/* Registration Link */}
               <div className="text-center">
-                <span className="text-muted">Don't have an account? </span>
-                <Link to="/register" className="text-decoration-none">
+                <span className="text-muted fs-5">Don't have an account? </span>
+                <Link to="/register" className="text-decoration-none fs-5 fw-bold">
                   Register here
                 </Link>
               </div>
