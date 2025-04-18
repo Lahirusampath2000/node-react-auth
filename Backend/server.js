@@ -25,13 +25,13 @@ app.get('/', (req, res) => {
 
 app.post("/register", async (req, res) => {
     console.log(req.body);
-    const {Firstname, Lastname, email, password} = req.body;
+    const {firstname, lastname, email, password} = req.body;
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         
         const result = await pool.query(
-            "INSERT INTO users (Firstname, Lastname, email, password) VALUES ($1, $2, $3, $4) RETURNING *",
-            [Firstname, Lastname, email, hashedPassword]
+            "INSERT INTO users (firstname, lastname, email, password) VALUES ($1, $2, $3, $4) RETURNING *",
+            [firstname, lastname, email, hashedPassword]
 
         );
         res.status(201).json({message: "User registered successfully", user: result.rows[0]});

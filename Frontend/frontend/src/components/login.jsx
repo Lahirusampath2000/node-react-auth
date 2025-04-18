@@ -84,7 +84,6 @@ const Login = () => {
                 </Link>
               </div>
 
-              {/* Submit Button */}
               <Button 
                 variant="primary" 
                 type="submit" 

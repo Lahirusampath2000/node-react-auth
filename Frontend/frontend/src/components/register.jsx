@@ -4,8 +4,8 @@ import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: ""
   });
@@ -64,8 +64,8 @@ const Register = () => {
                   size="lg"
                   type="text"
                   placeholder="Enter first name"
-                  name="firstName"
-                  value={formData.firstName}
+                  name="firstname"
+                  value={formData.firstname}
                   onChange={handleChange}
                   required
                 />
@@ -78,8 +78,8 @@ const Register = () => {
                   size="lg"
                   type="text"
                   placeholder="Enter last name"
-                  name="lastName"
-                  value={formData.lastName}
+                  name="lastname"
+                  value={formData.lastname}
                   onChange={handleChange}
                   required
                 />
